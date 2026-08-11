@@ -1,0 +1,1846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MK Timepiece | Timeless Elegance</title>
+
+    <meta name="description"
+        content="MK Timepiece - Premium watches crafted for every moment.">
+
+    <style>
+        /* =========================
+           RESET
+        ========================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #080808;
+            color: #fff;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+        }
+
+        /* =========================
+           COLORS
+        ========================== */
+
+        :root {
+            --black: #080808;
+            --dark: #111111;
+            --dark2: #171717;
+            --gold: #d6a73a;
+            --gold-light: #f5d477;
+            --white: #ffffff;
+            --gray: #a7a7a7;
+        }
+
+        /* =========================
+           TOP BAR
+        ========================== */
+
+        .top-bar {
+            height: 36px;
+            background: linear-gradient(90deg, #b47a18, #f0c45a, #b47a18);
+            color: #111;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .top-left,
+        .top-right {
+            display: flex;
+            gap: 25px;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================== */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(8, 8, 8, 0.96);
+            border-bottom: 1px solid rgba(214, 167, 58, 0.25);
+            backdrop-filter: blur(12px);
+        }
+
+        .navbar {
+            min-height: 78px;
+            padding: 0 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            min-width: 220px;
+        }
+
+        .logo-circle {
+            width: 55px;
+            height: 55px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold-light);
+            font-family: Georgia, serif;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .logo-circle::before {
+            content: "♛";
+            position: absolute;
+            top: -15px;
+            font-size: 16px;
+        }
+
+        .logo-text h2 {
+            font-family: Georgia, serif;
+            color: var(--gold-light);
+            letter-spacing: 2px;
+            font-size: 20px;
+        }
+
+        .logo-text p {
+            color: #aaa;
+            font-size: 8px;
+            letter-spacing: 2px;
+            margin-top: 3px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            font-size: 14px;
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold-light);
+        }
+
+        .nav-links a.active::after {
+            content: "";
+            position: absolute;
+            width: 25px;
+            height: 2px;
+            background: var(--gold);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .search {
+            width: 170px;
+            background: #1c1c1c;
+            border: 1px solid #444;
+            border-radius: 30px;
+            padding: 9px 14px;
+            color: white;
+            outline: none;
+        }
+
+        .nav-icon {
+            font-size: 21px;
+            color: white;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .count {
+            position: absolute;
+            top: -8px;
+            right: -9px;
+            background: var(--gold);
+            color: #111;
+            font-size: 10px;
+            width: 17px;
+            height: 17px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        /* =========================
+           HERO
+        ========================== */
+
+        .hero {
+            min-height: 620px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,0.95) 0%,
+                    rgba(0,0,0,0.72) 42%,
+                    rgba(0,0,0,0.2) 100%
+                ),
+                url("https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=1800&q=85")
+                center/cover no-repeat;
+        }
+
+        .hero-content {
+            width: 55%;
+            padding: 70px 5%;
+        }
+
+        .small-title {
+            color: var(--gold-light);
+            letter-spacing: 6px;
+            font-size: 13px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(55px, 7vw, 100px);
+            line-height: 0.92;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            color: var(--gold-light);
+            font-style: italic;
+        }
+
+        .hero-description {
+            margin: 25px 0;
+            color: #ddd;
+            font-size: 18px;
+        }
+
+        .gold-btn {
+            border: none;
+            background: linear-gradient(135deg, #f5d477, #c69228);
+            color: #111;
+            padding: 14px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .gold-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(214, 167, 58, 0.3);
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 30px;
+            margin-top: 45px;
+        }
+
+        .hero-feature {
+            color: #ddd;
+            font-size: 13px;
+        }
+
+        .hero-feature strong {
+            color: var(--gold-light);
+            display: block;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        /* =========================
+           SECTION
+        ========================== */
+
+        .section {
+            padding: 70px 5%;
+            background: #f1f1f1;
+            color: #111;
+        }
+
+        .section.dark {
+            background: #0d0d0d;
+            color: white;
+        }
+
+        .section-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 28px;
+        }
+
+        .section-title h2 {
+            font-family: Georgia, serif;
+            font-size: 38px;
+        }
+
+        .section-title p {
+            color: #777;
+            margin-top: 7px;
+        }
+
+        .dark .section-title p {
+            color: #999;
+        }
+
+        .view-all {
+            color: #9c701b;
+            font-weight: bold;
+        }
+
+        /* =========================
+           CATEGORIES
+        ========================== */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .category {
+            min-height: 220px;
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            border: 1px solid #333;
+        }
+
+        .category::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.9));
+        }
+
+        .category-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            z-index: 2;
+        }
+
+        .category h3 {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .category-btn {
+            border: 1px solid var(--gold-light);
+            background: transparent;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+        }
+
+        .category:nth-child(1) {
+            background-image: url("https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .category:nth-child(2) {
+            background-image: url("https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .category:nth-child(3) {
+            background-image: url("https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=800&q=80");
+        }
+
+        .category:nth-child(4) {
+            background-image: url("https://images.unsplash.com/photo-1526045431048-f857369baa09?auto=format&fit=crop&w=800&q=80");
+        }
+
+        /* =========================
+           PRODUCTS
+        ========================== */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            position: relative;
+            transition: 0.3s;
+            border: 1px solid #ddd;
+        }
+
+        .product:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+        }
+a
+        .product-image {
+            height: 270px;
+            background: #f7f7f7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
+            transition: 0.4s;
+        }
+
+        .product:hover img {
+            transform: scale(1.06);
+        }
+
+        .wishlist {
+            position: absolute;
+            top: 14px;
+            right: 14px;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background: white;
+            font-size: 19px;
+        }
+
+        .product-info {
+            padding: 17px;
+        }
+
+        .brand {
+            color: #777;
+            font-size: 12px;
+        }
+
+        .product h3 {
+            margin: 6px 0;
+            font-size: 16px;
+        }
+
+        .rating {
+            color: #e2a82d;
+            font-size: 13px;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin: 10px 0;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .old-price {
+            color: #999;
+            text-decoration: line-through;
+            font-size: 13px;
+        }
+
+        .discount {
+            background: #e63333;
+            color: white;
+            padding: 4px 7px;
+            border-radius: 5px;
+            font-size: 10px;
+        }
+
+        .cart-btn {
+            width: 100%;
+            padding: 11px;
+            border: none;
+            background: #111;
+            color: white;
+            border-radius: 7px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .cart-btn:hover {
+            background: #c69228;
+            color: #111;
+        }
+
+        /* =========================
+           PROMO
+        ========================== */
+
+        .promo {
+            min-height: 280px;
+            display: flex;
+            align-items: center;
+            padding: 40px 7%;
+            background:
+                linear-gradient(90deg, rgba(0,0,0,0.94), rgba(0,0,0,0.35)),
+                url("https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=1800&q=80")
+                center/cover;
+        }
+
+        .promo h2 {
+            font-family: Georgia, serif;
+            font-size: 45px;
+            max-width: 550px;
+        }
+
+        .promo h2 span {
+            color: var(--gold-light);
+        }
+
+        /* =========================
+           WHY US
+        ========================== */
+
+        .why-us {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            background: #0c0c0c;
+            padding: 35px 5%;
+            border-top: 1px solid #333;
+            border-bottom: 1px solid #333;
+        }
+
+        .why {
+            text-align: center;
+            padding: 15px;
+        }
+
+        .why-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .why h3 {
+            color: var(--gold-light);
+            font-size: 15px;
+            margin-bottom: 6px;
+        }
+
+        .why p {
+            color: #aaa;
+            font-size: 12px;
+        }
+
+        /* =========================
+           NEWSLETTER
+        ========================== */
+
+        .newsletter {
+            padding: 60px 5%;
+            text-align: center;
+            background: #171717;
+        }
+
+        .newsletter h2 {
+            font-family: Georgia, serif;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .newsletter p {
+            color: #aaa;
+            margin-bottom: 22px;
+        }
+
+        .newsletter-form {
+            max-width: 520px;
+            margin: auto;
+            display: flex;
+            gap: 8px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            border: none;
+            border-radius: 30px;
+            padding: 14px 18px;
+            outline: none;
+        }
+
+        /* =========================
+           FOOTER
+        ========================== */
+
+        footer {
+            background: #050505;
+            padding: 55px 5% 20px;
+            color: white;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: var(--gold-light);
+            font-family: Georgia, serif;
+            margin-bottom: 10px;
+        }
+
+        .footer-brand p {
+            color: #888;
+            max-width: 350px;
+            line-height: 1.7;
+        }
+
+        footer h3 {
+            color: var(--gold-light);
+            margin-bottom: 16px;
+            font-size: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer li {
+            color: #888;
+            margin: 10px 0;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        footer li:hover {
+            color: white;
+        }
+
+        .copyright {
+            border-top: 1px solid #292929;
+            padding-top: 20px;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+        }
+
+        /* =========================
+           CART MESSAGE
+        ========================== */
+
+        .toast {
+            position: fixed;
+            right: 25px;
+            bottom: 25px;
+            background: #111;
+            color: white;
+            border: 1px solid var(--gold);
+            padding: 15px 20px;
+            border-radius: 8px;
+            transform: translateY(120px);
+            transition: 0.4s;
+            z-index: 5000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 1100px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .categories {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .why-us {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+
+            .top-bar {
+                display: none;
+            }
+
+            .navbar {
+                min-height: 70px;
+                padding: 0 4%;
+            }
+
+            .logo {
+                min-width: auto;
+            }
+
+            .logo-text {
+                display: none;
+            }
+
+            .search {
+                width: 120px;
+            }
+
+            .hero {
+                min-height: 600px;
+            }
+
+            .hero-content {
+                width: 100%;
+                padding: 60px 6%;
+            }
+
+            .hero h1 {
+                font-size: 53px;
+            }
+
+            .hero-features {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .section {
+                padding: 50px 5%;
+            }
+
+            .section-title h2 {
+                font-size: 29px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            .why-us {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .promo h2 {
+                font-size: 34px;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- =========================
+         TOP BAR
+    ========================== -->
+
+    <div class="top-bar">
+
+        <div class="top-left">
+            <span>🚚 Free Shipping on Orders Above ₹999</span>
+            <span>│</span>
+            <span>💵 Cash on Delivery Available</span>
+        </div>
+
+        <div class="top-right">
+            <span>Track Order</span>
+            <span>Help</span>
+            <span>☎ Contact</span>
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         NAVBAR
+    ========================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="#" class="logo">
+
+                <div class="logo-circle">
+                    MK
+                </div>
+
+                <div class="logo-text">
+                    <h2>MK TIMEPIECE</h2>
+                    <p>MORE THAN TIME · IT'S A STYLE</p>
+                </div>
+
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="#" class="active">Home</a>
+                <a href="#watches">Watches</a>
+                <a href="#men">Men</a>
+                <a href="#women">Women</a>
+                <a href="#new">New Arrivals</a>
+                <a href="#offers">Offers</a>
+
+            </div>
+
+
+            <div class="nav-actions">
+
+                <input
+                    type="text"
+                    class="search"
+                    id="searchInput"
+                    placeholder="Search watches..."
+                >
+
+                <div class="nav-icon">
+                    ♡
+                    <span class="count" id="wishlistCount">0</span>
+                </div>
+
+                <a href="cart.html" class="nav-icon">
+    🛒
+    <span class="count" id="cartCount">0</span>
+</a>
+
+                <div class="nav-icon">
+                    👤
+                </div>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                DISCOVER THE ART OF TIME
+            </p>
+
+            <h1>
+                TIMELESS<br>
+                <span>ELEGANCE</span>
+            </h1>
+
+            <p class="hero-description">
+                Precision crafted for every moment.
+            </p>
+
+            <a href="#watches">
+                <button class="gold-btn">
+                    Shop Collection →
+                </button>
+            </a>
+
+            <div class="hero-features">
+
+                <div class="hero-feature">
+                    <strong>♢</strong>
+                    Premium Quality
+                </div>
+
+                <div class="hero-feature">
+                    <strong>◇</strong>
+                    Stylish Designs
+                </div>
+
+                <div class="hero-feature">
+                    <strong>✦</strong>
+                    Trusted Store
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         CATEGORIES
+    ========================== -->
+
+    <section class="section dark" id="watches">
+
+        <div class="section-title">
+
+            <div>
+                <h2>Explore Collections</h2>
+                <p>Find the perfect watch for your style.</p>
+            </div>
+
+            <a href="#" class="view-all">
+                View All →
+            </a>
+
+        </div>
+
+
+        <div class="categories">
+
+            <div class="category" id="men">
+
+                <div class="category-content">
+                    <h3>Men's Collection</h3>
+                    <button class="category-btn">
+                        Explore →
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="category" id="women">
+
+                <div class="category-content">
+                    <h3>Women's Collection</h3>
+                    <button class="category-btn">
+                        Explore →
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="category">
+
+                <div class="category-content">
+                    <h3>New Arrivals</h3>
+                    <button class="category-btn">
+                        Shop Now →
+                    </button>
+                </div>
+
+            </div>
+
+
+            <div class="category" id="offers">
+
+                <div class="category-content">
+                    <h3>Special Offers</h3>
+                    <button class="category-btn">
+                        Grab Now →
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NEW ARRIVALS
+    ========================== -->
+
+    <section class="section" id="new">
+
+        <div class="section-title">
+
+            <div>
+                <h2>New Arrivals 🔥</h2>
+                <p>Latest watches. Fresh styles. Yours now.</p>
+            </div>
+
+            <a href="#" class="view-all">
+                View All →
+            </a>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <!-- PRODUCT 1 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85">
+
+                    <button class="wishlist"
+                        onclick="addWishlist(this)">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="brand">
+                        MK Collection
+                    </span>
+
+                    <h3>MK Chronograph Black</h3>
+
+                    <div class="rating">
+                        ★★★★★ (4.8)
+                    </div>
+
+                    <div class="price-row">
+                        <span class="price">₹4,999</span>
+                        <span class="old-price">₹7,999</span>
+                        <span class="discount">38% OFF</span>
+                    </div>
+
+                    <button class="cart-btn"
+                        onclick="addCart('MK Chronograph Black')">
+                        🛒 Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img src="https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=700&q=85">
+
+                    <button class="wishlist"
+                        onclick="addWishlist(this)">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="brand">
+                        MK Premium
+                    </span>
+
+                    <h3>MK Classic Silver</h3>
+
+                    <div class="rating">
+                        ★★★★★ (4.7)
+                    </div>
+
+                    <div class="price-row">
+                        <span class="price">₹6,499</span>
+                        <span class="old-price">₹8,999</span>
+                        <span class="discount">28% OFF</span>
+                    </div>
+
+                    <button class="cart-btn"
+                        onclick="addCart('MK Classic Silver')">
+                        🛒 Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img src="https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=700&q=85">
+
+                    <button class="wishlist"
+                        onclick="addWishlist(this)">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="brand">
+                        MK Minimal
+                    </span>
+
+                    <h3>MK Minimal Black</h3>
+
+                    <div class="rating">
+                        ★★★★★ (4.6)
+                    </div>
+
+                    <div class="price-row">
+                        <span class="price">₹3,999</span>
+                        <span class="old-price">₹5,999</span>
+                        <span class="discount">33% OFF</span>
+                    </div>
+
+                    <button class="cart-btn"
+                        onclick="addCart('MK Minimal Black')">
+                        🛒 Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img src="https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=700&q=85">
+
+                    <button class="wishlist"
+                        onclick="addWishlist(this)">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="brand">
+                        MK Luxe
+                    </span>
+
+                    <h3>MK Rose Gold</h3>
+
+                    <div class="rating">
+                        ★★★★★ (4.8)
+                    </div>
+
+                    <div class="price-row">
+                        <span class="price">₹8,999</span>
+                        <span class="old-price">₹12,999</span>
+                        <span class="discount">31% OFF</span>
+                    </div>
+
+                    <button class="cart-btn"
+                        onclick="addCart('MK Rose Gold')">
+                        🛒 Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROMO
+    ========================== -->
+
+    <section class="promo">
+
+        <div>
+
+            <h2>
+                PREMIUM WATCHES
+                <br>
+                <span>AT BEST PRICES</span>
+            </h2>
+
+            <p style="margin:15px 0;color:#ddd;">
+                Luxury · Style · Performance
+            </p>
+
+            <button class="gold-btn">
+                Shop Now →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         BEST SELLERS
+    ========================== -->
+
+    <section class="section dark">
+
+        <div class="section-title">
+
+            <div>
+                <h2>Best Sellers 🏆</h2>
+                <p>Loved by many. Trusted by all.</p>
+            </div>
+
+            <a href="#" class="view-all">
+                View All →
+            </a>
+
+        </div>
+
+
+        <div class="products">
+
+
+            <div class="product">
+
+                <div class="product">
+
+    <a href="product.html" class="product-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85"
+            alt="MK Chronograph Black"
+        >
+
+        <span class="wishlist">
+            ♡
+        </span>
+
+    </a>
+
+    <div class="product-info">
+
+        <span class="brand">
+            MK Collection
+        </span>
+
+        <a href="product.html">
+            <h3>MK Chronograph Black</h3>
+        </a>
+
+        <div class="rating">
+            ★★★★★ (4.8)
+        </div>
+
+        <div class="price-row">
+
+            <span class="price">
+                ₹4,999
+            </span>
+
+            <span class="old-price">
+                ₹7,999
+            </span>
+
+            <span class="discount">
+                38% OFF
+            </span>
+
+        </div>
+
+        <button
+            class="cart-btn"
+            onclick="addCart('MK Chronograph Black')">
+
+            🛒 Add to Cart
+
+        </button>
+
+    </div>
+
+</div>
+
+                <div class="product-info">
+
+                    <span class="brand">
+                        MK Classic
+                    </span>
+
+                    <h3>MK Heritage Brown</h3>
+
+                    <div class="rating">
+                        ★★★★★ (4.8)
+                    </div>
+
+                    <div class="price-row">
+                        <span class="price">₹7,999</span>
+                        <span class="old-price">₹11,999</span>
+                        <span class="discount">35% OFF</span>
+                    </div>
+
+                    <button class="cart-btn"
+                        onclick="addCart('MK Heritage Brown')">
+                        🛒 Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img src="https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=700&q=85">
+
+                    <button class="wishlist"
+                        onclick="addWishlist(this)">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="brand">
+                        MK Digital
+                    </span>
+
+                    <h3>MK Digital Black</h3>
+
+                    <div class="rating">
+                        ★★★★★ (4.5)
+                    </div>
+
+                    <div class="price-row">
+                        <span class="price">₹1,299</span>
+                        <span class="old-price">₹2,499</span>
+                        <span class="discount">40% OFF</span>
+                    </div>
+
+                    <button class="cart-btn"
+                        onclick="addCart('MK Digital Black')">
+                        🛒 Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=700&q=85">
+
+                    <button class="wishlist"
+                        onclick="addWishlist(this)">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="brand">
+                        MK Women
+                    </span>
+
+                    <h3>MK Rose Classic</h3>
+
+                    <div class="rating">
+                        ★★★★★ (4.7)
+                    </div>
+
+                    <div class="price-row">
+                        <span class="price">₹4,999</span>
+                        <span class="old-price">₹7,999</span>
+                        <span class="discount">38% OFF</span>
+                    </div>
+
+                    <button class="cart-btn"
+                        onclick="addCart('MK Rose Classic')">
+                        🛒 Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="product">
+
+                <div class="product-image">
+
+                    <img src="https://images.unsplash.com/photo-1526045431048-f857369baa09?auto=format&fit=crop&w=700&q=85">
+
+                    <button class="wishlist"
+                        onclick="addWishlist(this)">
+                        ♡
+                    </button>
+
+                </div>
+
+                <div class="product-info">
+
+                    <span class="brand">
+                        MK Vintage
+                    </span>
+
+                    <h3>MK Vintage Steel</h3>
+
+                    <div class="rating">
+                        ★★★★★ (4.6)
+                    </div>
+
+                    <div class="price-row">
+                        <span class="price">₹2,999</span>
+                        <span class="old-price">₹4,999</span>
+                        <span class="discount">40% OFF</span>
+                    </div>
+
+                    <button class="cart-btn"
+                        onclick="addCart('MK Vintage Steel')">
+                        🛒 Add to Cart
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WHY CHOOSE US
+    ========================== -->
+
+    <section class="why-us">
+
+        <div class="why">
+            <div class="why-icon">🛡️</div>
+            <h3>100% Quality</h3>
+            <p>Quality products you can trust.</p>
+        </div>
+
+        <div class="why">
+            <div class="why-icon">🚚</div>
+            <h3>Fast Shipping</h3>
+            <p>Quick and safe delivery.</p>
+        </div>
+
+        <div class="why">
+            <div class="why-icon">💵</div>
+            <h3>Cash on Delivery</h3>
+            <p>COD available on selected orders.</p>
+        </div>
+
+        <div class="why">
+            <div class="why-icon">🎁</div>
+            <h3>Easy Returns</h3>
+            <p>Simple return & support policy.</p>
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         NEWSLETTER
+    ========================== -->
+
+    <section class="newsletter">
+
+        <h2>Stay Updated</h2>
+
+        <p>
+            Subscribe for new arrivals, exclusive offers & more.
+        </p>
+
+        <form class="newsletter-form"
+            onsubmit="subscribeUser(event)">
+
+            <input
+                type="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <button class="gold-btn">
+                Subscribe
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-grid">
+
+            <div class="footer-brand">
+
+                <h2>MK TIMEPIECE</h2>
+
+                <p>
+                    More than time — it's a style.
+                    Discover premium watches designed
+                    for every moment.
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>Shop</h3>
+
+                <ul>
+                    <li>All Watches</li>
+                    <li>Men's Watches</li>
+                    <li>Women's Watches</li>
+                    <li>New Arrivals</li>
+                    <li>Offers</li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>Customer Care</h3>
+
+                <ul>
+                    <li>Track Order</li>
+                    <li>Shipping Info</li>
+                    <li>Returns & Refunds</li>
+                    <li>FAQs</li>
+                    <li>Contact Us</li>
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>About</h3>
+
+                <ul>
+                    <li>Our Story</li>
+                    <li>Why MK Timepiece</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms & Conditions</li>
+                </ul>
+
+            </div>
+
+        </div>
+
+
+        <div class="copyright">
+
+            © 2026 MK Timepiece. All Rights Reserved.
+            &nbsp; | &nbsp;
+            Designed with ❤️ for Watch Lovers.
+
+        </div>
+
+    </footer>
+
+
+    <!-- TOAST -->
+
+    <div class="toast" id="toast">
+        Added successfully!
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        let cartCount = 0;
+        let wishlistCount = 0;
+
+
+        /* ADD TO CART */
+
+        function addCart(productName) {
+
+    const productData = {
+
+        "MK Chronograph Black": {
+            price: 4999,
+            image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85"
+        },
+
+        "MK Classic Silver": {
+            price: 6499,
+            image: "https://images.unsplash.com/photo-1539874754764-5a96559165b0?auto=format&fit=crop&w=700&q=85"
+        },
+
+        "MK Minimal Black": {
+            price: 3999,
+            image: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=700&q=85"
+        },
+
+        "MK Rose Gold": {
+            price: 8999,
+            image: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?auto=format&fit=crop&w=700&q=85"
+        },
+
+        "MK Heritage Brown": {
+            price: 7999,
+            image: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?auto=format&fit=crop&w=700&q=85"
+        },
+
+        "MK Digital Black": {
+            price: 1299,
+            image: "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?auto=format&fit=crop&w=700&q=85"
+        },
+
+        "MK Rose Classic": {
+            price: 4999,
+            image: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?auto=format&fit=crop&w=700&q=85"
+        },
+
+        "MK Vintage Steel": {
+            price: 2999,
+            image: "https://images.unsplash.com/photo-1526045431048-f857369baa09?auto=format&fit=crop&w=700&q=85"
+        }
+
+    };
+
+
+    let cart =
+        JSON.parse(
+            localStorage.getItem("mkCart")
+        ) || [];
+
+
+    const product =
+        productData[productName];
+
+
+    const existing =
+        cart.find(
+            item => item.name === productName
+        );
+
+
+    if (existing) {
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+
+            name: productName,
+            price: product.price,
+            image: product.image,
+            quantity: 1
+
+        });
+
+    }
+
+
+    localStorage.setItem(
+        "mkCart",
+        JSON.stringify(cart)
+    );
+
+
+    cartCount++;
+
+
+    document.getElementById("cartCount")
+        .innerText = cartCount;
+
+
+    showToast(
+        productName +
+        " added to cart 🛒"
+    );
+
+}
+
+
+        /* WISHLIST */
+
+        function addWishlist(button) {
+
+            if (button.innerText === "♡") {
+
+                button.innerText = "♥";
+                button.style.color = "#e33";
+
+                wishlistCount++;
+
+            } else {
+
+                button.innerText = "♡";
+                button.style.color = "#111";
+
+                wishlistCount--;
+
+            }
+
+            document.getElementById("wishlistCount").innerText =
+                wishlistCount;
+        }
+
+
+        /* TOAST */
+
+        function showToast(message) {
+
+            const toast =
+                document.getElementById("toast");
+
+            toast.innerText = message;
+
+            toast.classList.add("show");
+
+            setTimeout(function () {
+
+                toast.classList.remove("show");
+
+            }, 2500);
+        }
+
+
+        /* CART */
+
+        function showCart() {
+
+            if (cartCount === 0) {
+
+                showToast("Your cart is empty 🛒");
+
+            } else {
+
+                showToast(
+                    "You have " +
+                    cartCount +
+                    " item(s) in your cart 🛒"
+                );
+
+            }
+        }
+
+
+        /* NEWSLETTER */
+
+        function subscribeUser(event) {
+
+            event.preventDefault();
+
+            showToast(
+                "Thank you for subscribing! ❤️"
+            );
+
+            event.target.reset();
+        }
+
+
+        /* SEARCH */
+
+        document
+            .getElementById("searchInput")
+            .addEventListener("keyup", function () {
+
+                const search =
+                    this.value.toLowerCase();
+
+                const products =
+                    document.querySelectorAll(".product");
+
+                products.forEach(function (product) {
+
+                    const name =
+                        product
+                        .querySelector("h3")
+                        .innerText
+                        .toLowerCase();
+
+                    if (name.includes(search)) {
+
+                        product.style.display = "";
+
+                    } else {
+
+                        product.style.display = "none";
+
+                    }
+
+                });
+
+            });
+
+    </script>
+
+</body>
+</html>
